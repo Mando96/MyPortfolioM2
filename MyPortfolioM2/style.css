@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: rgb(224, 224, 110);
+    width: 100%;
+    height: 95vh;
+    margin: 10px;
+}
