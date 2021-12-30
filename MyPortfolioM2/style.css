@@ -3,98 +3,104 @@
     margin: 0;
     box-sizing: border-box;
     overflow: hidden;
+ 
 }
 
-body{
-    min-height: 100vh;
 
+
+  .container{
+    background: linear-gradient(#144d45, #097a6b);
+    height:97vh;
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: .5em;
+    grid-template-areas:
+    "top1 top2 top3 top4"
+    "mid1 mid2 mid3 mid4"
+    "base1 base2 base3 base4";
 }
-
-@media (min-width: 40em) {
-    .container{
-        background-color: rgb(224, 224, 110);
-        min-height: 100vh;
-        width:100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 2rem;
-        grid-template-areas:
-        "top1 top2 top3 top4"
-        "mid1 mid2 mid3 mid4"
-        "base1 base2 base3 base4";
-    }
-  }
 
 .logo{
-    background-color: rgb(150, 110, 224);
     grid-area: top1;
     grid-row: 1;
-    width: 15rem;
-    height: 5rem;
-    padding: 2em;
+    width: auto;
+    height:auto;
+    display: flex;
     justify-content:space-around;
 }
-
+.logo-child{
+    margin: auto;
+}
 .connect{
-    background-color: rgb(110, 178, 224);
     grid-column: top2 / top3;
     grid-row: 1;
     width: auto;
-    min-height: 5rem;
+    min-height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0px 250px 0px 250px;
+    margin-right: 1em;
+    margin-left: 1em;
+    padding: 0em 5em 0em 5em;
     
+}
+
+.connect div a:hover{
+    animation-name: bounce;
+    animation-duration: 0.8s;
 }
 
 .git{
-    padding: 0px 0px 0px 0px;
-    background-color: rgb(20, 41, 2);
-    
+    min-height: auto;
+    min-width: auto;
+    display: flex;
 }
-.git h2{
-    font-size: 50px;
+.git a{
+    margin: auto;
 }
 
+
 .twetter{
-    background-color: rgb(5, 44, 70);
+    min-height: auto;
+    min-width: auto;
+    display: flex;
 }
-.twetter h2{
-    font-size: 50px;
+.twetter a{
+    margin: auto;
 }
 
 .linkedin{
-    background-color: rgb(105, 6, 80);
+    min-height: auto;
+    min-width: auto;
+    display: flex;
 }
-.linkedin h2{
-    font-size: 50px;
+.linkedin a{
+    margin: auto;
 }
 
 .email{
-    background-color: rgb(224, 188, 110);
     grid-area: top4;
     grid-row: 1;
-    width: 10rem;
-    height: 5rem;
+    width: auto;
+    min-height: auto;
+    display: flex;
+}
+.email-child{
+    margin: auto;
+}
+.email-child a img:hover{
+    animation-name: expand;
+    animation-duration: 2s;
 }
 
-.skills-show{
-    background-color: rgb(224, 165, 110);
-    grid-area: base1;
-    min-width: 40vh;
-    min-height: 40vh;
-    padding: 50px 20px 5px 2px;
-    border-radius: 5px 300px 5px 5px;
-    cursor: pointer;
-}
 .skills{
-    background-color: rgb(224, 165, 110);
+    background-color:  #097a6b;
     grid-column: base1 / base2;
     grid-row: 1 / 4;
     width: auto;
     height: auto;
-    padding: 100px 250px 20px 10px;
+    padding: 10em 16.5em 2em 1em;
     border-radius: 5px 900px 5px 5px;
     transform:translateX(-100%);
     transition: 0.5s ease-in;
@@ -113,7 +119,7 @@ body{
     opacity: 0;
 }
 .my-skills{
-    background-color: rgb(27, 233, 119);
+    background-color:none;
     padding: 5px;
     width: auto;
     height: auto;
@@ -121,8 +127,8 @@ body{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
-    'work'
-    'tools';
+    "work"
+    "tools";
 }
 
 .work{
@@ -151,38 +157,38 @@ body{
     font-size: 50px;
 }
 .tools ul{
-    font-size: 30px;
+    font-size: 10px;
     text-align: start;
 }
-/*.skills:hover{
-    animation-name: example;
-    animation-duration: 2s;
-    z-index: 10;
-    width: 80vh;
-    height: 80vh;
-    border-radius: 450px;
-     /*animation-timing-function: linear;
-     animation-delay: 0.5s;
-     animation-iteration-count: infinite;
-     animation-direction: alternate;//
+.main-btns{
+    grid-column: base1 / base4;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+    grid-gap: 1em;
+    grid-template-areas: 
+    "ski yes yes abo";
 }
-*/
-.about-show{
-    background-color: rgb(224, 110, 119);
-    grid-area: base4;
-    min-width: 40vh;
-    min-height: 40vh;
-    padding: 100px 2px 5px 100px;
-    border-radius: 300px 5px 5px 5px;
+
+.skills-show{
+    background-color:  #097a6b;
+    padding: 0;
+    grid-area: ski;
     cursor: pointer;
 }
+.about-show{
+    background-color:  #097a6b;
+    grid-area: abo;
+    cursor: pointer;
+}
+
 .about{
-    background-color: rgb(224, 110, 119);
+    background-color:  #097a6b;
     grid-column: base3 / base4;
     grid-row: 1 / 4;
     width: auto;
     height: auto;
-    padding: 100px 10px 20px 200px;
+    padding: 10px 10px 20px 20px;
     border-radius: 900px 5px 5px 5px;
     transform:translateX(100%);
     transition: 0.5s ease-in;
@@ -198,7 +204,6 @@ body{
     opacity: 0;
 }
 
-
 .about-active{
     transform:translateX(0);
 }
@@ -207,7 +212,7 @@ body{
 }
 
 .about-me{
-    background-color: rgb(27, 233, 119);
+    background-color: none;
     padding: 5px;
     width: auto;
     height: auto;
@@ -218,15 +223,17 @@ body{
     'text1 img'
     'text2 text2';
 }
+
 .head{
     grid-area: head ;
     text-align: center;
-    font-size: 30px;
-    padding: 0px 0px 0px 60px;
-    margin-bottom: 25px;
+    font-size: 10px;
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 5px;
 }
+
 .head h2{
-    padding: 0px 0px 0px 60px;
+    padding: 0px 0px 0px 135px;
 }
 .img{
     grid-column: img;
@@ -237,35 +244,135 @@ body{
 .text1{
     grid-column: text1 / img;
     grid-row:text1;
-    font-size: 20px;
+    font-size: 5px;
     z-index: 10;
 }
 .text1 p{
     line-height: 1.5;
-    padding: 150px 50px 0px 0px;
+    padding: 5px 50px 0px 0px;
 }
 .text2{
     grid-area: text2;
-    font-size: 20px;
+    font-size: 10px;
 }
 .text2 p{
     line-height: 1.5;
 }
 
 .head, .text1, .text2{
-    padding: 10px;
+    padding: 5px;
 }
 
-/*.about:hover{
-    animation-name: example;
-    animation-duration: 2s;
-    z-index: 10;
-    width: 80vh;
-    height: 80vh;
-    border-radius: 450px;
-}*/
+@media only screen and (max-width: 40rem) {
 
+    body{
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .container{
+        background: linear-gradient(#09356e, #155ada);
+        height: 100vh;
+        width: 100%;
+        padding-top: 1.5em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: .2em;
+        grid-template-areas:
+        "top1 top2 top3"
+        "mid1 mid2 mid3"
+        "base1 base2 base3";
+    }
 
+        .logo{
+            grid-area: top1;
+            width: auto;
+            height:auto;
+            display: flex;
+            justify-content:space-around;
+        }
+        .connect{
+            grid-area: top2 ;
+            width: auto;
+            min-height: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-right: .2em;
+            margin-left: .2em;
+            padding: 0em .2em 0em .2em;
+        }
+        
+        .git .twetter .linkedin{
+            min-height: auto;
+            min-width: auto;
+            display: flex;
+        }
+        
+        .email{
+            grid-area: top3;
+            width: auto;
+            min-height: auto;
+            display: flex;
+        }
+
+        .main-btns{
+            grid-column: base1 / base3;
+            grid-row: 3/4;
+            display: grid;
+            grid-template-columns: 1fr 0.5fr 1fr;
+            grid-gap: .5em;
+            grid-template-areas: 
+            "ski yes abo";
+        }
+        
+        .skills-show{
+            background-color:  #66e9d7;
+            padding: 0;
+            grid-area: ski;
+            cursor: pointer;
+        }
+        .about-show{
+            background-color:  #77fcea;
+            grid-area: abo;
+            cursor: pointer;
+        }
+        .skills{
+            background-color:  #097a6b;
+            grid-column: base1 / base3;
+            grid-row: 1 / 4;
+            width: auto;
+            height: auto;
+            padding: 5em 8.5em 1em .5em;
+            border-radius: 5px 900px 5px 5px;
+            transform:translateX(-100%);
+            transition: 0.5s ease-in;
+        }
+
+        .skill-inactive{
+            transform:translateX(-100%);
+        }
+
+        .about{
+            background-color:  #097a6b;
+            grid-column: base1 / base3;
+            grid-row: 1 / 4;
+            width: auto;
+            height: auto;
+            padding: 5em 8.5em 1em .5em;
+            border-radius: 900px 5px 5px 5px;
+            transform:translateX(100%);
+            transition: 0.5s ease-in;
+        }
+
+        .about-inactive{
+            transform:translateX(100%);
+        }
+
+        .about-active{
+            transform:translateX(0);
+        }
+
+  }
 
 @keyframes fade{
     from {
@@ -276,6 +383,24 @@ body{
       opacity: 1;
     
     }
+  }
+  @keyframes bounce {
+      0% {margin: auto;}
+      25%{margin-top: 10px;}
+      50%{margin: auto;}
+      100%{margin: 10px;}
+
+  }
+
+  @keyframes expand {
+      from{
+          height: 30px;
+          width: 30px;
+      }
+      to{
+          height: 60px;
+          width: 60px;
+      }
   }
 
   
